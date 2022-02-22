@@ -6,12 +6,17 @@ public class Vertice {
     List<Vertice> adj;
     int grauSaida;
 
-    public Vertice(int num) {
-        this.num = num;
+    public Vertice(int nome) {
+        this.nome = nome;
         this.adj = new LinkedList<Vertice>();
     }
 
-    public String toString() {
-        return "Vertice(" + num + ")";
+    public int getNome() {
+		return nome;
+	}
+
+	public String toString() {
+        
+		return "Vertice(" + nome + ")";
     }
 }
