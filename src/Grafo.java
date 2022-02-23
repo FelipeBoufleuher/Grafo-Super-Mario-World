@@ -26,12 +26,16 @@ public class Grafo {
     	}
     }
     
-    public static void distanciaBuscaEmLargura (Grafo g, Vertice v) {
+    /*
+     *  ------------------- Busca em Largura ---------------------
+     */
+    
+    public static void distanciaBuscaLargura (Grafo g, Vertice v) {
     	for(int i = 0; i < 95; i++) {
     		listaDistancias[i] = infinito;
     	}
     	Queue<Vertice> fila = new LinkedList<>();
-    	listaDistancias[g.vertices.getFirst().nome] = 0;
+    	listaDistancias[v.getNome()] = 0;
     	fila.add(v);
     	while(!fila.isEmpty()) {
     		Vertice aux = fila.remove();
@@ -42,7 +46,15 @@ public class Grafo {
     			}
     		}
     	}
-    	
     }
+    
+    public static void distanciaDoisVertices(Grafo g, int x, int y) {
+    	distanciaBuscaLargura(g, g.getVertices().get(x));
+    	if(listaDistancias[y] != infinito) {
+    		System.out.println("\n Distancia entre " + x + " e " + y + "e: " + listaDistancias[y]);
+    	} else System.out.println("O caminho não existe");
+    }
+    
+    
 }
 
