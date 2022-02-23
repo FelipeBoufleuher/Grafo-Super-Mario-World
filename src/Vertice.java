@@ -5,6 +5,10 @@ public class Vertice {
 	int nome;
     List<Vertice> adj;
     int grauSaida;
+    
+    public List<Vertice> getAdj() {
+		return adj;
+	}
 
     public Vertice(int nome) {
         this.nome = nome;
@@ -19,4 +23,13 @@ public class Vertice {
         
 		return "Vertice(" + nome + ")";
     }
+	
+	public boolean existeAresta(int y) { // WTF JAVA FUNCIONA DIREITO
+		for(Vertice v : adj) {
+			if(v.nome == y) {
+				return true;
+			}	
+			return false;
+		}
+	}
 }
